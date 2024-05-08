@@ -42,6 +42,12 @@ async function run() {
         res.send(result);
     })
 
+    app.get('/productsIds', async (req, res) =>{
+      const ids = req.body;
+      console.log(ids);
+      res.send([])
+    })
+
     app.get('/productsCount', async(req, res) => {
       const count = await productCollection.estimatedDocumentCount();
       res.send({count})
